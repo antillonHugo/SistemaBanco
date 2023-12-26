@@ -1,43 +1,57 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - Mi aplicación ASP.NET</title>
+    <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+    @*@Scripts.Render("~/bundles/modernizr")*@
 </head>
-<body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Nombre de la aplicación", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Acerca de", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>
-                </ul>
-            </div>
+<body class="body-container">
+
+    @{
+        int tipoRol = Convert.ToInt32(Session["Rol"]);
+    }
+
+    <nav class="nav">
+        <a href="#" class="link link--nav-company">
+            <p class="nav__name-company">Bank Fourts</p>
+        </a>
+        <button class="nav__toggle">
+            <i class="fas fa-bars nav__icon"></i>
+        </button>
+        <div class="nav__options">
+            <ul class="nav__ul-options">
+                <li class="nav__li-options"><a href="#" class="link">Inicio</a></li>
+                @if (tipoRol == 1)
+                {
+                    <li class="nav__li-options"><a href="#" class="link">Clientes</a></li>
+                    <li class="nav__li-options"><a href="#" class="link">Clientes</a></li>
+                    <li class="nav__li-options"><a href="#" class="link">Tipos de transacciones</a></li>
+                }
+
+                <li class="nav__li-options"><a href="#" class="link">Transacciones</a></li>
+                <li class="nav__li-options"><a href="#" class="link">Saldo</a></li>
+                <li class="nav__li-options">
+                    <a href="#" class="link"> @Session["UserName"]</a>
+
+                    @*<ul class="nav__ul-options">
+                            <li class="nav__li-options"><a href="#" class="link">Perfil</a></li>
+                             <li class="nav__li-options"><a href="#" class="link">Cerrar Sesion</a></li>
+                        </ul>*@
+                </li>
+            </ul>
         </div>
-    </div>
-    <div class="container body-content">
+    </nav>
+
+    <div class="body-container__content">
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - Mi aplicación ASP.NET</p>
-        </footer>
     </div>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+    @*@Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")*@
+    <script src="https://kit.fontawesome.com/ca6b9ed282.js"></script>
+    @Scripts.Render("~/bundles/main")
+    @*  @RenderSection("scripts", required: false)*@
 </body>
 </html>

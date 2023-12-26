@@ -1,0 +1,43 @@
+﻿@model SistemaBancario.Models.User
+
+@Styles.Render("~/Content/css")
+
+@{
+    Layout = null;
+}
+
+<div class="login">
+    <div class="login__content">
+        <section class="login__form">
+            @using (Html.BeginForm("Login", "User", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="login__group">
+                    @Html.Label("Usuario", new { @class = "login__label" })
+                    <div class="login__group-input">
+                        @Html.TextBoxFor(m => m.nombre_usuario, new { @class = "login__input-text" })
+                    </div>
+                </div>
+                <div class="login__group">
+                    @Html.Label("Contraseña", new { @class = "login__label" })
+                    <div class="login__group-input">
+                        @Html.PasswordFor(m => m.contrasena, new { @class = "login__input-text" })
+                    </div>
+                </div>
+                <div class="login__group">
+                    <input type="submit" value="Log in" class="login__button" />
+                </div>
+                <div class="login__group">
+                    <button type="button" class="login__button login__group--create">Crear cuenta</button>
+                </div>
+            }
+        </section>
+
+        @if (!string.IsNullOrEmpty(ViewBag.Message))
+        {
+            <div class="login__message-error">@ViewBag.Message</div>
+        }
+
+    </div>
+</div>

@@ -1,24 +1,219 @@
-﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
-}
-
-/* Set padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
-}
-
-/* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
+﻿@import url('https://fonts.googleapis.com/css2?family=caveat:wght@600&family=poppins:wght@100;200;300;700&family=roboto:ital,wght@0,400;1,900&family=source+sans+pro:wght@300;700&display=swap');
+/*
+fuentes a utilizar
+font-family: 'caveat', cursive;
+7
+font-family: 'roboto', sans-serif;
+font-family: 'source sans pro', sans-serif;
 */
-.dl-horizontal dt {
-    white-space: normal;
+
+* {
+    margin: 0;
+    padding: 0;
 }
 
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
+body {
+    font-family: 'source sans pro', sans-serif;
+}
+
+.link {
+    text-decoration: none;
+    color: white;
+    display: block;
+    padding: .8rem;
+}
+
+.link--nav-company {
+    color: black;
+    font-weight: 800;
+}
+
+.login {
+    background-color: rgba(38, 80, 115,0.1);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login__form {
+    padding: 3rem 2rem;
+}
+
+.login__content {
+    background-color: rgba(38, 80, 115,0.1);
+    border-radius: 1rem;
+}
+
+.login__label {
+    font-size: 1rem;
+    font-weight: 400;
+    color: rgb(4, 13, 18);
+    font-family: 'poppins', sans-serif;
+}
+
+.login__input-text {
+    all: unset;
+    background-color: #ecf4d6;
+    border-radius: 5px;
+    padding: .5rem;
+}
+
+.login__group {
+    padding: .2em 0;
+}
+
+.login__group-input {
+    padding: .5rem 0;
+}
+
+.login__button {
+    background-color: rgba(46, 138, 153,0.6);
+    color: white;
+    border: none;
+    padding: .8rem 0;
+    width: 100%;
+    border-radius: .5rem;
+}
+
+.login__group--create {
+    margin: .5rem 0;
+}
+
+.login__button:hover {
+    background-color: rgba(46, 138, 153,0.9);
+    cursor: pointer;
+}
+
+.login__message-error {
+    background-color: rgba(216, 0, 50,0.8);
+    padding: 1.5rem;
+    text-align: center;
+    color: white;
+    font-family: 'poppins', sans-serif;
+}
+
+/*estilos del menú principal*/
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(46, 138, 153,0.9);
+    color: white;
+    padding: 1rem .5rem;
+    position: relative;
+    transition: ease-in-out 2s;
+}
+
+.nav__toggle {
+    border: none;
+    border-radius: 1rem;
+    background: white;
+    cursor: pointer;
+}
+
+.nav__icon {
+    padding: 1rem;
+}
+
+.nav__options {
+    display: none;
+}
+
+.nav__options_show {
+    display: block;
+    position: absolute;
+    top: 4.8rem;
+    left: 0;
+    width: 100%;
+    background-color: rgba(46, 138, 153,0.9);
+    color: white;
+}
+
+.nav__li-options {
+    list-style: none;
+    display: block;
+    transition: all ease 1s;
+}
+
+
+    .nav__li-options:hover {
+        background: rgba(69, 71, 75,0.5);
+        transition: all ease 1s;
+    }
+
+
+
+/*media querys*/
+@media screen and (min-width:320px) {
+    .login {
+        /*background-color:red;*/
+    }
+}
+
+
+@media screen and (min-width:480px) {
+    .login {
+        /*background-color: green;*/
+    }
+}
+
+
+@media screen and (min-width:768px) {
+    /* .login {
+        background-color: deeppink;
+    }*/
+
+
+    .login__form {
+        padding: 3rem 3rem;
+    }
+
+    /* .login__content {
+        padding: 8rem;
+    }*/
+
+}
+
+
+@media screen and (min-width:960px) {
+    /*.login {
+        background-color: red;
+    }*/
+
+    .login__form {
+        padding: 3rem 5rem;
+    }
+
+    .nav__toggle {
+        display: none;
+    }
+
+    .nav__options {
+        display: block;
+    }
+
+    .nav__ul-options {
+        display: flex;
+    }
+}
+
+
+@media screen and (min-width:1024px) {
+
+    /* .login {
+        background-color: cadetblue;
+    }*/
+}
+
+
+@media screen and (min-width:1328px) {
+
+    /*.login {
+        background-color: yellow;
+    }*/
+
+    .login__form {
+        padding: 4rem 6rem;
+    }
 }
