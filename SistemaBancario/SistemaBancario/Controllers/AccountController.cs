@@ -9,24 +9,22 @@ using SistemaBancario.Services;
 
 namespace SistemaBancario.Controllers
 {
-    public class UserController : Controller
+    public class AccountController : Controller
     {
         //instancia del archivo que realiza las operaciones CRUD
         UserMaintenance objuser = new UserMaintenance();
-
+        
         // GET: Users
         public ActionResult Login()
         {
             return View();
         }
 
-
         // POST Users
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Login(User user)
         {
-
             if (!string.IsNullOrWhiteSpace(user.nombre_usuario) && !string.IsNullOrWhiteSpace(user.contrasena))
             {
                 var userdata = objuser.Validar(user.nombre_usuario, user.contrasena);
@@ -40,7 +38,6 @@ namespace SistemaBancario.Controllers
                     if (userdata.estado == false)
                     {
                         ViewBag.Message = "Su Cuenta esta deshabilitada comuniquese con su proveedor ";
-
                     }
                     else
                     {
@@ -49,18 +46,21 @@ namespace SistemaBancario.Controllers
                         Session["Rol"] = userdata.idRoles;
                         return RedirectToAction("Index", "Home");
                     }
-
                 }
-
             }
             else
             {
                 ViewBag.Message = "Campos requeridos";
-
             }
-
-            // ViewBag.ReturnUrl = returnUrl;
             return View();
+        }
+
+        public ActionResult Logout()
+        {
+            Session["UserName"] = null;
+            Session["Rol"] = null;
+
+            return RedirectToAction("Login", "Account");
         }
 
     }

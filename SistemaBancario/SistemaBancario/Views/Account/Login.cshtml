@@ -9,7 +9,7 @@
 <div class="login">
     <div class="login__content">
         <section class="login__form">
-            @using (Html.BeginForm("Login", "User", FormMethod.Post))
+            @using (Html.BeginForm("Login", "Account", FormMethod.Post))
             {
                 @Html.AntiForgeryToken()
 
@@ -38,6 +38,5 @@
         {
             <div class="login__message-error">@ViewBag.Message</div>
         }
-
     </div>
 </div>

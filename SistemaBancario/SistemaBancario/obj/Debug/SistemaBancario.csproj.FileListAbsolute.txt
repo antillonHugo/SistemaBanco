@@ -83,3 +83,4 @@ C:\Users\hugoa\OneDrive\Documentos\GitHub\SistemaBanco\SistemaBancario\SistemaBa
 C:\Users\hugoa\OneDrive\Documentos\GitHub\SistemaBanco\SistemaBancario\SistemaBancario\obj\Debug\SistemaBancario.csproj.CopyComplete
 C:\Users\hugoa\OneDrive\Documentos\GitHub\SistemaBanco\SistemaBancario\SistemaBancario\obj\Debug\SistemaBancario.dll
 C:\Users\hugoa\OneDrive\Documentos\GitHub\SistemaBanco\SistemaBancario\SistemaBancario\obj\Debug\SistemaBancario.pdb
+C:\Users\hugoa\OneDrive\Documentos\GitHub\SistemaBanco\SistemaBancario\SistemaBancario\obj\Debug\SistemaBancario.csproj.AssemblyReference.cache
