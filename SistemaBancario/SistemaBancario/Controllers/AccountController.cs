@@ -55,6 +55,7 @@ namespace SistemaBancario.Controllers
             return View();
         }
 
+        //método para cerrar sesión
         public ActionResult Logout()
         {
             Session["UserName"] = null;
