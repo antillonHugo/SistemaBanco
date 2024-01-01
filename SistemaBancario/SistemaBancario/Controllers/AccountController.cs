@@ -9,6 +9,7 @@ using SistemaBancario.Services;
 
 namespace SistemaBancario.Controllers
 {
+   
     public class AccountController : Controller
     {
         //instancia del archivo que realiza las operaciones CRUD
@@ -42,8 +43,8 @@ namespace SistemaBancario.Controllers
                     else
                     {
                         // Almacenar el nombre de usuario en la sesión después de iniciar sesión
-                        Session["UserName"] = userdata.nombre_usuario;
                         Session["Rol"] = userdata.idRoles;
+                        Session["idcliente"] = userdata.idcliente;
                         return RedirectToAction("Index", "Home");
                     }
                 }
@@ -58,8 +59,8 @@ namespace SistemaBancario.Controllers
         //método para cerrar sesión
         public ActionResult Logout()
         {
-            Session["UserName"] = null;
             Session["Rol"] = null;
+            Session["idcliente"] = null;
 
             return RedirectToAction("Login", "Account");
         }

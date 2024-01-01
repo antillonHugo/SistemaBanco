@@ -1,4 +1,9 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
-Esta es la version
+
+@if (Session["idcliente"] != null)
+{
+
+    <h1>@Session["idcliente"]</h1>
+}

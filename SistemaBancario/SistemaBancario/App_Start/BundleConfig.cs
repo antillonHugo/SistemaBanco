@@ -29,7 +29,7 @@ namespace SistemaBancario
                        "~/Content/bootstrap.css",
                        "~/Content/site.css"));*/
 
-            bundles.Add(new ScriptBundle("~/bundles/main").Include(
+           bundles.Add(new ScriptBundle("~/bundles/main").Include(
                       "~/Scripts/main*"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(

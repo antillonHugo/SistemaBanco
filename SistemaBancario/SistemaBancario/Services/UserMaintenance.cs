@@ -93,7 +93,7 @@ namespace SistemaBancario.Services
             {
                 using (SqlConnection connection = new SqlConnection(objConnection.connectionString))
                 {
-                    string query = "SELECT nombre_usuario,estado,idRoles FROM USUARIO WHERE nombre_usuario = @nombre_usuario AND contrasena = @contrasena";
+                    string query = "SELECT nombre_usuario,estado,idRoles,idcliente FROM USUARIO WHERE nombre_usuario = @nombre_usuario AND contrasena = @contrasena AND estado=1";
 
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
@@ -110,7 +110,8 @@ namespace SistemaBancario.Services
                                 {
                                     nombre_usuario = (string)reader["nombre_usuario"],
                                     estado = (bool)reader["estado"],
-                                    idRoles = (int)reader["idRoles"]
+                                    idRoles = (int)reader["idRoles"],
+                                    idcliente = (int)reader["idcliente"]
                                 };
                             }
                         }
