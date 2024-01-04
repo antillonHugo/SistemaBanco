@@ -22,15 +22,15 @@
         </button>
         <div class="nav__options">
             <ul class="nav__ul-options">
-                <li class="nav__li-options"><a href="#" class="link">Inicio</a></li>
+                <li class="nav__li-options"><a href="@Url.Action("Index", "Home")" class="link">Inicio</a></li>
                 @if (tipoRol == 1)
                 {
-                    <li class="nav__li-options"><a href="#" class="link">Clientes</a></li>
-                    <li class="nav__li-options"><a href="#" class="link">Clientes</a></li>
-                    <li class="nav__li-options"><a href="#" class="link">Tipos de transacciones</a></li>
+                    <li class="nav__li-options"><a href="@Url.Action("About", "Home")" class="link">Clientes</a></li>
+                    <li class="nav__li-options"><a href="@Url.Action("About", "Home")" class="link">Clientes</a></li>
+                    <li class="nav__li-options"><a href="@Url.Action("About", "Home")" class="link">Tipos de transacciones</a></li>
                 }
-                <li class="nav__li-options"><a href="#" class="link">Transacciones</a></li>
-                <li class="nav__li-options"><a href="#" class="link">Saldo</a></li>
+                <li class="nav__li-options"><a href="@Url.Action("About", "Home")" class="link">Transacciones</a></li>
+                <li class="nav__li-options"><a href="@Url.Action("Contact", "Home")" class="link">Saldo</a></li>
                 <li class="nav__li-options">
                     <a href="#" class="link">Usuario</a>
                     @*<ul class="nav__ul-options">

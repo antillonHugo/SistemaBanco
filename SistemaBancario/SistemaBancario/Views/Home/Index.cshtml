@@ -1,9 +1,34 @@
-﻿@{
-    ViewBag.Title = "Home Page";
+﻿@model List<SistemaBancario.Models.Client>
+
+@{
+    ViewBag.Title = "Pagina principal ";
 }
 
 @if (Session["idcliente"] != null)
 {
-
-    <h1>@Session["idcliente"]</h1>
+    if (Model != null)
+     {
+        if (Model.Count > 1)
+        {
+            <h2>Clientes </h2>
+            foreach (var client in Model)
+            {
+                @Html.Partial("_ClienteParcial", client)
+            }
+        }
+        else
+        {
+            <h2>Informacion de tus datos personales </h2>
+            @Html.Partial("_ClienteParcial", Model.First())
+        }
+    }
+    else
+    {
+        <h2>No existen registros</h2>
+    }
 }
+
+
+
+
+

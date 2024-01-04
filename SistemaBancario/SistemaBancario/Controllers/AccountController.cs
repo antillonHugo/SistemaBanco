@@ -13,7 +13,7 @@ namespace SistemaBancario.Controllers
     public class AccountController : Controller
     {
         //instancia del archivo que realiza las operaciones CRUD
-        UserMaintenance objuser = new UserMaintenance();
+        UserService objuser = new UserService();
         
         // GET: Users
         public ActionResult Login()

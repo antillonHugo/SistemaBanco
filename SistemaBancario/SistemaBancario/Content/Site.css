@@ -15,6 +15,12 @@ font-family: 'source sans pro', sans-serif;
 
 body {
     font-family: 'source sans pro', sans-serif;
+    width: 100vw; /* 100% del ancho de la ventana (viewport) */
+    height: 100vh;
+    background-image: url('Images/5570863.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
 }
 
 .link {
@@ -30,7 +36,6 @@ body {
 }
 
 .login {
-    background-color: rgba(38, 80, 115,0.1);
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -42,8 +47,10 @@ body {
 }
 
 .login__content {
-    background-color: rgba(38, 80, 115,0.1);
-    border-radius: 1rem;
+    background-color: rgba(69, 69, 69,0.2);
+    /* background-color: rgba(69, 69, 69,0.1);*/
+    border-radius: 1.6rem;
+    border: 1px solid #cccc;
 }
 
 .login__label {
@@ -55,7 +62,8 @@ body {
 
 .login__input-text {
     all: unset;
-    background-color: #ecf4d6;
+    /*background-color: #ecf4d6;*/
+    background-color:white;
     border-radius: 5px;
     padding: .5rem;
 }
