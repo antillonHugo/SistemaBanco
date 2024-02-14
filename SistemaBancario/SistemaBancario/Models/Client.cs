@@ -12,5 +12,9 @@ namespace SistemaBancario.Models
         public string apellido { get; set; }
         public string correo { get; set; }
         public string telefono {get;set;}
+
+        // Propiedad de navegación hace referencia al cliente asociado con su usuario personal
+        // Clave foránea para representar la relación uno a uno con User
+        public virtual User user { get; set; }
     }
 }

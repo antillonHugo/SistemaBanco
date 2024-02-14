@@ -45,6 +45,7 @@ namespace SistemaBancario.Controllers
                         // Almacenar el nombre de usuario en la sesión después de iniciar sesión
                         Session["Rol"] = userdata.idRoles;
                         Session["idcliente"] = userdata.idcliente;
+                        Session["nombre_usuario"] = userdata.nombre_usuario;
                         return RedirectToAction("Index", "Home");
                     }
                 }
@@ -61,6 +62,7 @@ namespace SistemaBancario.Controllers
         {
             Session["Rol"] = null;
             Session["idcliente"] = null;
+            Session["nombre_usuario"] = null;
 
             return RedirectToAction("Login", "Account");
         }

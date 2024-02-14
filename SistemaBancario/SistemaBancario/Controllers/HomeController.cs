@@ -23,6 +23,11 @@ namespace SistemaBancario.Controllers
 
         public ActionResult Index()
         {
+            return View();
+        }
+
+        public ActionResult About()
+        {
             // Comprobamos el tipo de valor que se almacena en la variable rol y que no este vacía
             if (Session["Rol"] != null && rol is int)
             {
@@ -32,17 +37,11 @@ namespace SistemaBancario.Controllers
                 //convertimos el contenido de la variable de sesión al tipo de dato esperado (entero)
                 int.TryParse(Session["idcliente"].ToString(), out codclient);
 
+                //Enviamos los parámetros 
                 var data = objclient.obtenercliente(codclient, rol);
-                
+
                 return View(data);
             }
-           
-            return View();
-        }
-
-        public ActionResult About()
-        {
-            ViewBag.Message = "About ."+ rol;
 
             return View();
         }

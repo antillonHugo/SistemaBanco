@@ -1,11 +1,15 @@
 ﻿@import url('https://fonts.googleapis.com/css2?family=caveat:wght@600&family=poppins:wght@100;200;300;700&family=roboto:ital,wght@0,400;1,900&family=source+sans+pro:wght@300;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;400;600&family=Mulish:ital,wght@0,200;0,400;1,300&family=Nunito:wght@200;300&display=swap');
 
 /*
 fuentes a utilizar
 font-family: 'caveat', cursive;
-7
 font-family: 'roboto', sans-serif;
 font-family: 'source sans pro', sans-serif;
+
+font-family: 'Dosis', sans-serif; - 200;400;600
+font-family: 'Mulish', sans-serif; -200;400;300
+font-family: 'Nunito', sans-serif; -200;300
 */
 
 * {
@@ -13,28 +17,119 @@ font-family: 'source sans pro', sans-serif;
     padding: 0;
 }
 
-body {
-    font-family: 'source sans pro', sans-serif;
-    width: 100vw; /* 100% del ancho de la ventana (viewport) */
-    height: 100vh;
+/*Estilo para el contenedor principal de todo el sistema*/
+.body-container__content {
+    padding-top: 2.6rem;
     background-image: url('Images/5570863.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
+    border:1px solid black;
 }
 
+body {
+    font-family: 'source sans pro', sans-serif;
+}
+
+/*Estilos para enlaces*/
 .link {
     text-decoration: none;
     color: white;
     display: block;
     padding: .8rem;
+    /*border:1px solid black;*/
+}
+
+/*Estilos para imagenes*/
+.img {
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+}
+
+/*Estilos para el header*/
+.header {
+    position: fixed;
+    width: 100%;
+    /*box-sizing: border-box;*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+    background-color: rgba(46, 138, 153,0.9);
+    z-index:1;
+    /*border: 2px solid red;*/
+}
+
+.header__company-name {
+    text-decoration-line:underline;
+}
+
+.header__company-name--link{
+}
+
+.header__button {
+    /*border: 2px solid orange;*/
+    cursor: pointer;
+    border:none;
+    padding:.5rem;
+    border-radius:5px;
+}
+
+/*estilos del menú principal*/
+.nav {
+    display: none;
+}
+
+.nav__options_show {
+    display: block;
+    position: absolute;
+    top: 2.6rem;
+    left: 0;
+    width: 100%;
+    background-color: rgba(46, 138, 153,0.9);
+    color: white;
+}
+
+.nav__list {
+    list-style: none;
+}
+
+.nav__list--logout {
+    display:none;
+}
+
+
+.nav__item {
+    padding: 0 1rem;
+}
+
+.nav__item--logout:hover .nav__list--logout {
+    position: absolute;
+    bottom: -43px;
+    left: 4.5rem;
+    /*border: 2px solid green;*/
+    display: block;
+    transition: 10s ease;
+    background-color: rgba(46, 138, 153,0.9);
+}
+
+.nav__item:hover {
+    background: rgba(69, 71, 75,0.5);
+    transition: all ease 1s;
+}
+
+/*
+.link--logout{
+    border-bottom:.5px solid #cccc;
 }
 
 .link--nav-company {
     color: black;
     font-weight: 800;
-}
+}*/
 
+/*Estilos para el login*/
 .login {
     height: 100vh;
     display: flex;
@@ -46,11 +141,11 @@ body {
     padding: 3rem 2rem;
 }
 
-.login__content {
-    background-color: rgba(69, 69, 69,0.2);
-    /* background-color: rgba(69, 69, 69,0.1);*/
+.login__content { 
+    background-color: rgba(67, 66, 66,0.2); 
     border-radius: 1.6rem;
     border: 1px solid #cccc;
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
 }
 
 .login__label {
@@ -102,98 +197,154 @@ body {
     font-family: 'poppins', sans-serif;
 }
 
-/*estilos del menú principal*/
-.nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: rgba(46, 138, 153,0.9);
-    color: white;
-    padding: 1rem .5rem;
+
+
+/*estilos para la pádina de inicio*/
+
+.dashboard {
+    overflow: hidden;
     position: relative;
-    transition: ease-in-out 2s;
+    /*border:3px solid red;*/
 }
 
-.nav__toggle {
-    border: none;
-    border-radius: 1rem;
-    background: white;
-    cursor: pointer;
+.dashboard__image {
+    height: 280px;
+    /*border: 3px solid blue;*/
 }
 
-.nav__icon {
-    padding: 1rem;
-}
-
-.nav__options {
-    display: none;
-}
-
-.nav__options_show {
-    display: block;
+.dashboard__content {
+    background-color: white;
+    border: 1px solid #cccc;
     position: absolute;
-    top: 4.8rem;
-    left: 0;
-    width: 100%;
-    background-color: rgba(46, 138, 153,0.9);
-    color: white;
+    right: 0;
+    top:10em;
+    margin: 0 1rem;
+    text-align: center;
+    border-radius: 5px;
 }
 
-.nav__li-options {
-    list-style: none;
+.dashboard__message {
+    font-size: clamp(1.8rem, 5vw, 2rem); /* Mínimo de 14px, máximo de 20px, basado en el ancho de la ventana */
+    font-family: 'Dosis', sans-serif;
+}
+
+/*Estilos para tarjetas de la pagina inicial del usuario*/
+.card-container {
+    display:flex;
+    flex-direction:column;
+    gap:1.5rem;
+    padding:0 1rem;
+    /*border:2px solid rgba(46, 138, 153,0.9);*/
+}
+
+.card {
+    border: 1px solid #cccc;
+    padding: 1.5rem .5rem;
+    box-shadow: rgba(0, 0, 0, 0.09) 0 0 5px 5px;
+    text-align: center;
+}
+
+.card__image {
+    font-size: clamp(1.8rem, 5vw, 2rem); /* Mínimo de 14px, máximo de 20px, basado en el ancho de la ventana */
+}
+
+.card__title {
+    font-family: 'Nunito', sans-serif;
+    padding:1rem 0;
+    /*
+    font-family: 'Dosis', sans-serif; - 200;400;600
+    font-family: 'Mulish', sans-serif; -200;400;300
+    font-family: 'Nunito', sans-serif; -200;300
+                                       */
+}
+
+.card__description {
+    font-family: 'Mulish', sans-serif;
+}
+
+
+/*
+.nav__ul-options--logout:hover > li {
     display: block;
-    transition: all ease 1s;
+    background-color: blue;
 }
-
-
-    .nav__li-options:hover {
-        background: rgba(69, 71, 75,0.5);
-        transition: all ease 1s;
-    }
-
-
-
+*/
 /*media querys*/
 @media screen and (min-width:320px) {
-    .login {
-        /*background-color:red;*/
-    }
+ 
 }
 
 
 @media screen and (min-width:480px) {
-    .login {
-        /*background-color: green;*/
+
+    /*Estilos para el login*/
+
+    /*Estilos para tarjetas de la pagina inicial del usuario*/
+    .dashboard {
+        /*border:3px solid red;*/
+       
+    }
+
+    .dashboard__content {
+        top: 12em;
+        margin: auto 2.4rem;
+        /*border:5px solid blue;*/
+    }
+
+    .card-container {
+        padding:2rem 2.5rem;
     }
 }
 
-
+/*Tablet*/
 @media screen and (min-width:768px) {
-    /* .login {
-        background-color: deeppink;
-    }*/
 
 
+    /*Estilos para el login*/
     .login__form {
         padding: 3rem 3rem;
     }
+
 
     /* .login__content {
         padding: 8rem;
     }*/
 
+    /*Estilos para tarjetas de la pagina inicial del usuario*/
+
+    .card-container {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 0 1rem;
+        /*border:2px solid rgba(46, 138, 153,0.9);*/
+    }
+
+    .card-container {
+        padding: 2rem 2.5rem;
+    }
+
+
+    .card-container {
+        flex-direction: row;
+        gap: 2rem;
+        flex-wrap:wrap;
+    }
+
+    .card {
+        flex-basis: 189px;
+    }
+
 }
 
-
+/*Laptop*/
 @media screen and (min-width:960px) {
-    /*.login {
-        background-color: red;
-    }*/
-
+ 
+    /*Estilos para el login*/
     .login__form {
         padding: 3rem 5rem;
     }
-
+    /*
     .nav__toggle {
         display: none;
     }
@@ -205,23 +356,27 @@ body {
     .nav__ul-options {
         display: flex;
     }
+
+
+    .nav__li-options--submenu {
+      background-color:blue;
+    }*/
+
+
+ 
+
 }
 
-
+/*large screen*/
 @media screen and (min-width:1024px) {
 
-    /* .login {
-        background-color: cadetblue;
-    }*/
+  
 }
 
 
 @media screen and (min-width:1328px) {
 
-    /*.login {
-        background-color: yellow;
-    }*/
-
+    /*Estilos para el login*/
     .login__form {
         padding: 4rem 6rem;
     }

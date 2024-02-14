@@ -1,5 +1,63 @@
-﻿@{
+﻿@model List<SistemaBancario.Models.Client>
+
+@{
     ViewBag.Title = "About";
 }
 
 @ViewBag.Message
+<br />
+<br />
+
+
+
+@{
+    ViewBag.Title = "Pagina principal ";
+
+    // Definir la parte superior de la tabla
+    string parteSuperiorTabla = "<table><thead><tr><th>Código</th><th> Nombre </th><th> Apellido </th><th> Correo </th><th> Telefono </th><th> Nombre Usuario</th><th> Contraseña </th><th>Estado </th><th>Rol </th></tr></thead><tbody>";
+
+    string parteInferiorTabla = "</tbody><tfoot><tr><td>Total</td><td></td><td>55</td></tr></tfoot></table>";
+
+}
+
+@if (Session["idcliente"] != null)
+{
+    if (Model != null)
+    {
+        if (Model.Count > 1)
+        {
+            <h2>Clientes </h2>
+
+            <!-- Renderizar la parte superior de la tabla -->
+            @Html.Raw(parteSuperiorTabla)
+
+            foreach (var client in Model)
+            {
+                @Html.Partial("_ClienteParcial", client)
+            }
+
+            <!-- Renderizar la parte superior de la tabla -->
+            @Html.Raw(parteInferiorTabla);
+
+        }
+        else
+        {
+            <h2>Informacion de tus datos personales </h2>
+            <!-- Renderizar la parte superior de la tabla -->
+            @Html.Raw(parteSuperiorTabla)
+            @Html.Partial("_ClienteParcial", Model.First())
+
+            <!-- Renderizar la parte superior de la tabla -->
+            @Html.Raw(parteInferiorTabla);
+        }
+    }
+    else
+    {
+        <h2>No existen registros</h2>
+    }
+}
+
+
+
+
+

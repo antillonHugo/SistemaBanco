@@ -1,34 +1,48 @@
-﻿@model List<SistemaBancario.Models.Client>
+﻿@*<div class="cuadro">
+        <div class="coll coll__012">
+            <img src="https://images.pexels.com/photos/6721941/pexels-photo-6721941.jpeg" alt="Alternate Text" class="img" loading="lazy"/>
 
-@{
-    ViewBag.Title = "Pagina principal ";
-}
+        </div>
+        <div class="coll">
+            <h1>Bienvenido, @Session["nombre_usuario"]: Tu Portal Bancario Personal con Abanck </h1>
+        </div>
+    </div>*@
 
-@if (Session["idcliente"] != null)
-{
-    if (Model != null)
-     {
-        if (Model.Count > 1)
-        {
-            <h2>Clientes </h2>
-            foreach (var client in Model)
-            {
-                @Html.Partial("_ClienteParcial", client)
-            }
-        }
-        else
-        {
-            <h2>Informacion de tus datos personales </h2>
-            @Html.Partial("_ClienteParcial", Model.First())
-        }
-    }
-    else
-    {
-        <h2>No existen registros</h2>
-    }
-}
+<div class="dashboard">
+    <div class="dashboard__image">
+        <img src="https://images.pexels.com/photos/733856/pexels-photo-733856.jpeg" alt="Alternate Text" class="img" loading="lazy" />
+    </div>
+    <div class="dashboard__content">
+        <h2 class="dashboard__message">Bienvenido, @Session["nombre_usuario"]: Tu Portal Bancario Personal con Abanck </h2>
+    </div>
+</div>
 
+<div class="card-container">
 
+    <div class="card">
+        <i class="fa-solid fa-money-bills card__image"></i>
+        <h3 class="card__title">Sin impacto, sin preocupaciones</h3>
+        <p class="card__description">Verifique si tiene aprobación previa para ofertas de tarjetas sin impacto en su puntaje crediticio.</p>
+    </div>
+    <div class="card">
+        <i class="fa-solid fa-money-bills card__image"></i>
+        <h3 class="card__title">El ahorro comienza aquí</h3>
+        <p class="card__description">Mantenga su dinero creciendo con una de las mejores tasas de ahorro de Estados Unidos.</p>
+    </div>
+    <div class="card">
+        <i class="fa-solid fa-money-bills card__image"></i>
+        <h3 class="card__title">Comprar un coche más fácilmente</h3>
+        <p class="card__description">Precalifique para ver su tarifa y pago reales antes de visitar al distribuidor.</p>
+    </div>
+    <div class="card">
+        <i class="fa-solid fa-money-bills card__image"></i>
+        <h3 class="card__title">Comprar un coche más fácilmente</h3>
+        <p class="card__description">Precalifique para ver su tarifa y pago reales antes de visitar al distribuidor.</p>
+    </div>
+    <div class="card">
+        <i class="fa-solid fa-money-bills card__image"></i>
+        <h3 class="card__title">Comprar un coche más fácilmente</h3>
+        <p class="card__description">Precalifique para ver su tarifa y pago reales antes de visitar al distribuidor.</p>
+    </div>
 
-
-
+</div>
